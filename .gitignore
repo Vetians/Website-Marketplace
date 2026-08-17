@@ -1,0 +1,21 @@
+# Environment
+.env
+
+# Composer dependencies
+vendor/
+
+# CodeIgniter Writable / Logs / Cache / Debugbar
+/writable/cache/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+/writable/debugbar/*
+
+# Untuk CodeIgniter 3 (jika memakai format lama)
+/application/logs/log-*.php
+/application/cache/*
+
+# System OS junk files
+.DS_Store
+.Thumbnails
+Thumbs.db
