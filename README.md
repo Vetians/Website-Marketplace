@@ -1,61 +1,320 @@
-# CodeIgniter 4 Framework
+<p align="center">
+  <img src="public/assets/images/logo.png" alt="Preloved Ukrida Logo" width="180">
+</p>
 
-## What is CodeIgniter?
+<h1 align="center">Preloved Ukrida</h1>
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+<p align="center">
+  <b>Marketplace barang preloved khusus mahasiswa Universitas Kristen Krida Wacana</b><br>
+  Jual beli barang bekas layak pakai dengan aman, murah, dan ramah lingkungan.
+</p>
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2+">
+  <img src="https://img.shields.io/badge/CodeIgniter-4-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white" alt="CodeIgniter 4">
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5.3">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License MIT">
+</p>
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## 📖 Tentang Project
 
-## Important Change with index.php
+**Preloved Ukrida** adalah website marketplace yang dibuat untuk membantu mahasiswa UKRIDA membeli dan menjual barang preloved (bekas) berkualitas — mulai dari buku kuliah, elektronik, pakaian, aksesoris, hingga furniture. Website ini memiliki halaman publik untuk pengunjung dan panel administrator untuk mengelola seluruh konten secara mandiri.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Project ini dibangun menggunakan **CodeIgniter 4** dengan pola **MVC**, dilengkapi **REST API JSON**, sistem autentikasi berbasis session, serta tampilan responsif dengan **Bootstrap 5.3** yang mendukung **mode terang/gelap**.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+---
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## ✨ Fitur Utama
 
-## Repository Management
+### 🌐 Halaman Publik
+- 🏠 **Beranda** — hero section, carousel gambar, dan daftar produk terbaru yang dimuat secara dinamis via AJAX.
+- 🛍️ **Marketplace Produk** — menampilkan produk aktif beserta kategori, harga, kondisi, dan stok.
+- 🔎 **Pencarian Produk** — cari produk berdasarkan nama atau deskripsi melalui kolom search di navbar.
+- 🏷️ **Filter Kategori** — jelajahi produk berdasarkan kategori (Buku Cetak, Elektronik, Pakaian, Aksesoris, Furniture).
+- 📄 **Detail Produk** — halaman detail dengan deskripsi lengkap, harga, kondisi, dan rekomendasi produk lainnya.
+- 📰 **Berita & Artikel** — daftar berita berstatus *publish* serta halaman detail berbasis slug.
+- 🖼️ **Galeri Foto** — grid dokumentasi kegiatan dengan **modal lightbox** untuk melihat foto lebih besar.
+- ℹ️ **Tentang Kami** — informasi visi, misi, dan nilai platform.
+- ✉️ **Form Kontak** — validasi sisi server, pesan error/sukses, dan data tersimpan ke database.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### 🔐 Autentikasi & Keamanan
+- Login dan registrasi akun administrator.
+- Password disimpan menggunakan **`password_hash()`** dan diverifikasi dengan **`password_verify()`**.
+- **Session-based authentication** dengan filter `AuthFilter` yang melindungi seluruh halaman administrator dan API admin.
+- **CSRF protection** pada form kontak.
+- Validasi input server-side (nama, email, subjek, pesan, produk, berita, dll).
+- Validasi upload gambar: tipe `jpg/jpeg/png`, ukuran maksimal 2 MB.
+- Proteksi agar admin tidak dapat menghapus akunnya sendiri yang sedang login.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### 🛠️ Panel Administrator
+- 📊 **Dashboard** — statistik total produk, berita, pesan masuk, dan user.
+- 📦 **Kelola Produk** — tambah, edit, hapus, upload gambar, atur kategori, harga, kondisi, stok, dan status.
+- 🗂️ **Kelola Kategori** — tambah, edit, dan hapus kategori produk.
+- 📰 **Kelola Berita** — CRUD berita dengan status *publish/draft*, slug otomatis, dan gambar.
+- 🖼️ **Kelola Galeri** — tambah dan hapus foto dokumentasi.
+- 📨 **Pesan Masuk** — lihat dan hapus pesan dari form kontak.
+- 👥 **Kelola User** — daftar admin terdaftar dan hapus akun (kecuali akun sendiri).
+- 📱 **Sidebar offcanvas responsif**, dropdown profil, dan tombol kembali ke website.
 
-## Contributing
+### 🎨 UI / UX
+- Desain responsif untuk desktop, tablet, dan mobile.
+- **Dark / Light mode** dengan penyimpanan preferensi di `localStorage`.
+- Navbar sticky berbentuk *pill* dengan indikator halaman aktif.
+- Animasi hover pada kartu produk dan galeri.
+- Loading state & empty state saat data dimuat via AJAX.
+- Notifikasi flash message untuk aksi berhasil/gagal.
+- Font **Poppins** dan ikon **Bootstrap Icons**.
 
-We welcome contributions from the community.
+### 🔌 REST API JSON
+Tersedia endpoint publik untuk konsumsi data dan endpoint admin yang dilindungi autentikasi.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+| Method | Endpoint | Deskripsi |
+|--------|----------|-----------|
+| `GET` | `/api/produk` | Semua produk aktif |
+| `GET` | `/api/produk?kategori_id=2` | Filter produk berdasarkan ID kategori |
+| `GET` | `/api/produk?kategori_slug=elektronik` | Filter produk berdasarkan slug kategori |
+| `GET` | `/api/produk/detail/{slug}` | Detail produk berdasarkan slug |
+| `GET` | `/api/kategori` | Semua kategori |
+| `GET` | `/api/berita` | Semua berita berstatus publish |
+| `GET` | `/api/berita/detail/{slug}` | Detail berita berdasarkan slug |
+| `GET` | `/api/galeri` | Semua foto galeri |
+| `GET` | `/api/admin/dashboard` | Statistik dashboard 🔒 |
+| `GET` | `/api/admin/produk` | Data produk admin 🔒 |
+| `GET` | `/api/admin/kategori` | Data kategori admin 🔒 |
+| `GET` | `/api/admin/berita` | Data berita admin 🔒 |
+| `GET` | `/api/admin/galeri` | Data galeri admin 🔒 |
+| `GET` | `/api/admin/pesan` | Data pesan masuk 🔒 |
+| `GET` | `/api/admin/user` | Data user 🔒 |
 
-## Server Requirements
+🔒 = memerlukan login administrator.
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+Contoh respons:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```json
+{
+  "status": 200,
+  "message": "Data produk berhasil diambil",
+  "data": [
+    {
+      "id": 1,
+      "nama": "Laptop Bekas",
+      "slug": "laptop-bekas",
+      "harga": 3500000,
+      "kondisi": "bekas",
+      "nama_kategori": "Elektronik"
+    }
+  ]
+}
+```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+---
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 🧰 Teknologi yang Digunakan
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+| Kategori | Teknologi |
+|----------|-----------|
+| Bahasa | PHP 8.2+ |
+| Framework | CodeIgniter 4 |
+| Database | MySQL / MariaDB |
+| Frontend | Bootstrap 5.3, Bootstrap Icons, jQuery 3.7 |
+| Font | Google Fonts — Poppins |
+| Web Server | Apache / Laragon / XAMPP |
+| Tools | Composer, Git, PHPUnit |
+
+---
+
+## 🗄️ Struktur Database
+
+Database: `20222_wp2_412024003`
+
+| Tabel | Fungsi |
+|-------|--------|
+| `users` | Akun administrator (nama, email, password, role) |
+| `kategori` | Kategori produk |
+| `produk` | Data produk marketplace |
+| `berita` | Berita/artikel dengan status publish/draft |
+| `galeri` | Foto dokumentasi kegiatan |
+| `pesan` | Pesan masuk dari form kontak |
+
+Relasi: `produk.kategori_id → kategori.id` (`ON DELETE CASCADE`).
+
+---
+
+## 📁 Struktur Project
+
+```text
+.
+├── app/
+│   ├── Config/              # Konfigurasi aplikasi, routes, database
+│   ├── Controllers/
+│   │   ├── Api.php          # REST API publik
+│   │   ├── Api/Admin.php    # REST API admin (protected)
+│   │   ├── Auth.php         # Login, register, logout
+│   │   ├── Berita.php       # Halaman berita publik
+│   │   ├── Galeri.php       # Halaman galeri publik
+│   │   ├── Kontak.php       # Form kontak
+│   │   ├── Produk.php       # Marketplace & detail produk
+│   │   ├── Tentang.php      # Halaman tentang
+│   │   └── Administrator/   # Controller panel admin
+│   ├── Filters/             # AuthFilter
+│   ├── Models/              # Model untuk setiap tabel
+│   └── Views/
+│       ├── administrator/   # Tampilan panel admin
+│       ├── public/          # Tampilan halaman publik
+│       └── templates/       # Header, footer, sidebar
+├── public/
+│   ├── assets/
+│   │   ├── css/             # Style custom
+│   │   ├── js/              # theme.js (dark mode)
+│   │   ├── images/          # Logo & gambar statis
+│   │   └── uploads/         # Gambar hasil upload admin
+│   └── index.php            # Entry point aplikasi
+├── system/                  # Framework CodeIgniter 4
+├── tests/                   # Unit testing
+├── writable/                # Cache, logs, session
+├── 20222_wp2_412024003.sql  # Dump database
+├── composer.json
+└── README.md
+```
+
+---
+
+## 🚀 Cara Menjalankan Project
+
+### Prasyarat
+- PHP **8.2** atau lebih baru
+- Ekstensi PHP: `intl`, `mbstring`, `mysqli`
+- MySQL / MariaDB
+- Composer
+- Laragon / XAMPP (opsional)
+
+### Langkah Instalasi
+
+1. **Clone repository**
+
+   ```bash
+   git clone https://github.com/Vetians/Website-Marketplace.git
+   cd Website-Marketplace
+   ```
+
+2. **Install dependency**
+
+   ```bash
+   composer install
+   ```
+
+3. **Siapkan file environment**
+
+   Salin file `env` menjadi `.env` (Windows):
+
+   ```bash
+   copy env .env
+   ```
+
+   Atau di Linux/macOS:
+
+   ```bash
+   cp env .env
+   ```
+
+4. **Buat database dan import data**
+
+   Buat database dengan nama `20222_wp2_412024003`, lalu import file SQL:
+
+   ```bash
+   mysql -u root -p 20222_wp2_412024003 < 20222_wp2_412024003.sql
+   ```
+
+   Atau melalui **phpMyAdmin** → **Import** → pilih file `20222_wp2_412024003.sql`.
+
+5. **Sesuaikan konfigurasi**
+
+   Edit `.env` (hilangkan tanda `#` pada baris yang diperlukan):
+
+   ```ini
+   app.baseURL = 'http://localhost:8080/'
+
+   database.default.hostname = localhost
+   database.default.database = 20222_wp2_412024003
+   database.default.username = root
+   database.default.password =
+   database.default.DBDriver = MySQLi
+   database.default.port = 3306
+   ```
+
+6. **Jalankan aplikasi**
+
+   ```bash
+   php spark serve
+   ```
+
+7. **Buka di browser**
+
+   ```text
+   http://localhost:8080
+   ```
+
+   Panel admin: `http://localhost:8080/login`
+
+> Jika memakai Laragon/XAMPP, arahkan document root ke folder `public/` atau akses melalui virtual host.
+
+---
+
+## 🔑 Akun Administrator
+
+Registrasi akun baru dapat dilakukan melalui halaman:
+
+```text
+http://localhost:8080/register
+```
+
+Akun hasil registrasi otomatis memiliki role `admin` dan dapat langsung login ke panel administrator. Untuk penggunaan produksi, segera ganti kredensial bawaan dari file SQL.
+
+---
+
+## 🖼️ Halaman Website
+
+| Halaman | URL |
+|---------|-----|
+| Beranda | `/` |
+| Marketplace | `/produk` |
+| Detail Produk | `/produk/{slug}` |
+| Filter Kategori | `/produk/kategori/{slug}` |
+| Berita | `/berita` |
+| Detail Berita | `/berita/{slug}` |
+| Galeri | `/galeri` |
+| Tentang | `/tentang` |
+| Kontak | `/kontak` |
+| Login Admin | `/login` |
+| Registrasi Admin | `/register` |
+| Dashboard Admin | `/administrator/dashboard` |
+
+---
+
+## 📌 Catatan Pengembangan
+
+- Folder `public/assets/uploads/` harus memiliki izin tulis untuk proses upload gambar.
+- Folder `writable/` harus dapat ditulis oleh web server.
+- Ubah `app.baseURL` pada `.env` sesuai domain saat deployment.
+- Untuk produksi, set `CI_ENVIRONMENT = production` dan nonaktifkan mode debug.
+- Jangan commit file `.env` yang berisi kredensial database.
+
+---
+
+## 👤 Author
+
+**Christian Melhan** — NIM `412024003`
+Program Studi Teknik Informatika, Universitas Kristen Krida Wacana (UKRIDA)
+
+---
+
+## 📄 License
+
+Project ini dilisensikan di bawah [MIT License](LICENSE).
+
+<p align="center">
+  <sub>Dibuat dengan ❤️ untuk mendukung gaya hidup hemat dan ramah lingkungan di kalangan mahasiswa.</sub>
+</p>
