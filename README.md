@@ -21,7 +21,7 @@
 
 ## 📖 Tentang Project
 
-**Preloved Ukrida** adalah website marketplace yang dibuat untuk membantu mahasiswa UKRIDA membeli dan menjual barang preloved (bekas) berkualitas — mulai dari buku kuliah, elektronik, pakaian, aksesoris, hingga furniture. Website ini memiliki halaman publik untuk pengunjung dan panel administrator untuk mengelola seluruh konten secara mandiri.
+**Preloved Ukrida** adalah website marketplace yang dibuat untuk membantu mahasiswa UKRIDA membeli dan menjual barang preloved (bekas) berkualitas, mulai dari buku kuliah, elektronik, pakaian, aksesoris, hingga furniture. Website ini memiliki halaman publik untuk pengunjung dan panel administrator untuk mengelola seluruh konten secara mandiri.
 
 Project ini dibangun menggunakan **CodeIgniter 4** dengan pola **MVC**, dilengkapi **REST API JSON**, sistem autentikasi berbasis session, serta tampilan responsif dengan **Bootstrap 5.3** yang mendukung **mode terang/gelap**.
 
@@ -30,15 +30,15 @@ Project ini dibangun menggunakan **CodeIgniter 4** dengan pola **MVC**, dilengka
 ## ✨ Fitur Utama
 
 ### 🌐 Halaman Publik
-- 🏠 **Beranda** — hero section, carousel gambar, dan daftar produk terbaru yang dimuat secara dinamis via AJAX.
-- 🛍️ **Marketplace Produk** — menampilkan produk aktif beserta kategori, harga, kondisi, dan stok.
-- 🔎 **Pencarian Produk** — cari produk berdasarkan nama atau deskripsi melalui kolom search di navbar.
-- 🏷️ **Filter Kategori** — jelajahi produk berdasarkan kategori (Buku Cetak, Elektronik, Pakaian, Aksesoris, Furniture).
-- 📄 **Detail Produk** — halaman detail dengan deskripsi lengkap, harga, kondisi, dan rekomendasi produk lainnya.
-- 📰 **Berita & Artikel** — daftar berita berstatus *publish* serta halaman detail berbasis slug.
-- 🖼️ **Galeri Foto** — grid dokumentasi kegiatan dengan **modal lightbox** untuk melihat foto lebih besar.
-- ℹ️ **Tentang Kami** — informasi visi, misi, dan nilai platform.
-- ✉️ **Form Kontak** — validasi sisi server, pesan error/sukses, dan data tersimpan ke database.
+- 🏠 **Beranda**: hero section, carousel gambar, dan daftar produk terbaru yang dimuat secara dinamis via AJAX.
+- 🛍️ **Marketplace Produk**: menampilkan produk aktif beserta kategori, harga, kondisi, dan stok.
+- 🔎 **Pencarian Produk**: cari produk berdasarkan nama atau deskripsi melalui kolom search di navbar.
+- 🏷️ **Filter Kategori**: jelajahi produk berdasarkan kategori (Buku Cetak, Elektronik, Pakaian, Aksesoris, Furniture).
+- 📄 **Detail Produk**: halaman detail dengan deskripsi lengkap, harga, kondisi, dan rekomendasi produk lainnya.
+- 📰 **Berita & Artikel**: daftar berita berstatus *publish* serta halaman detail berbasis slug.
+- 🖼️ **Galeri Foto**: grid dokumentasi kegiatan dengan **modal lightbox** untuk melihat foto lebih besar.
+- ℹ️ **Tentang Kami**: informasi visi, misi, dan nilai platform.
+- ✉️ **Form Kontak**: validasi sisi server, pesan error/sukses, dan data tersimpan ke database.
 
 ### 🔐 Autentikasi & Keamanan
 - Login dan registrasi akun administrator.
@@ -50,13 +50,13 @@ Project ini dibangun menggunakan **CodeIgniter 4** dengan pola **MVC**, dilengka
 - Proteksi agar admin tidak dapat menghapus akunnya sendiri yang sedang login.
 
 ### 🛠️ Panel Administrator
-- 📊 **Dashboard** — statistik total produk, berita, pesan masuk, dan user.
-- 📦 **Kelola Produk** — tambah, edit, hapus, upload gambar, atur kategori, harga, kondisi, stok, dan status.
-- 🗂️ **Kelola Kategori** — tambah, edit, dan hapus kategori produk.
-- 📰 **Kelola Berita** — CRUD berita dengan status *publish/draft*, slug otomatis, dan gambar.
-- 🖼️ **Kelola Galeri** — tambah dan hapus foto dokumentasi.
-- 📨 **Pesan Masuk** — lihat dan hapus pesan dari form kontak.
-- 👥 **Kelola User** — daftar admin terdaftar dan hapus akun (kecuali akun sendiri).
+- 📊 **Dashboard**: statistik total produk, berita, pesan masuk, dan user.
+- 📦 **Kelola Produk**: tambah, edit, hapus, upload gambar, atur kategori, harga, kondisi, stok, dan status.
+- 🗂️ **Kelola Kategori**: tambah, edit, dan hapus kategori produk.
+- 📰 **Kelola Berita**: CRUD berita dengan status *publish/draft*, slug otomatis, dan gambar.
+- 🖼️ **Kelola Galeri**: tambah dan hapus foto dokumentasi.
+- 📨 **Pesan Masuk**: lihat dan hapus pesan dari form kontak.
+- 👥 **Kelola User**: daftar admin terdaftar dan hapus akun (kecuali akun sendiri).
 - 📱 **Sidebar offcanvas responsif**, dropdown profil, dan tombol kembali ke website.
 
 ### 🎨 UI / UX
@@ -120,7 +120,7 @@ Contoh respons:
 | Framework | CodeIgniter 4 |
 | Database | MySQL / MariaDB |
 | Frontend | Bootstrap 5.3, Bootstrap Icons, jQuery 3.7 |
-| Font | Google Fonts — Poppins |
+| Font | Google Fonts (Poppins) |
 | Web Server | Apache / Laragon / XAMPP |
 | Tools | Composer, Git, PHPUnit |
 
@@ -306,7 +306,7 @@ Akun hasil registrasi otomatis memiliki role `admin` dan dapat langsung login ke
 
 ## 👤 Author
 
-**Christian Melhan** — NIM `412024003`
+**Christian Melhan** - NIM `412024003`
 Program Studi Teknik Informatika, Universitas Kristen Krida Wacana (UKRIDA)
 
 ---
